@@ -1,0 +1,94 @@
+// GENERAL STYLES
+
+h1 {
+  color: $darkblue;
+  font-weight: 800;
+}
+
+p {
+  color: $lightblue;
+}
+
+#hero {
+  height: 100vh;
+}
+
+#hero-full {
+  height: 100%;
+}
+
+#hero,
+#hero-full {
+  background-image: url(../img/brm-bg.jpg);
+  width: 100%;
+
+  a {
+    color: $darkblue;
+    font-weight: 800;
+    text-decoration: none;
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      bottom: 0;
+      left: 0;
+      background-color: $darkblue;
+      visibility: hidden;
+      transform: scaleX(0);
+      transition: all 0.3s ease-in-out 0s;
+    }
+
+    &:hover {
+      &:before {
+        visibility: visible;
+        transform: scaleX(1);
+      }
+    }
+  }
+}
+
+.hero-body {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba($white, 0) 50%, rgba($darkblue, 1) 100%); /* W3C */
+}
+
+.inset {
+  background-color: rgba($white, 0.25);
+  //border-radius: 5px;
+  padding: 2em 2em 3em 2em;
+  h1,
+  p {
+    color: $darkblue;
+  }
+}
+
+.form-wrapper {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.footer {
+  background-color: $darkblue;
+  padding: 2em 0;
+
+  p {
+    font-weight: 800;
+  }
+}
+
+.button.is-link {
+  font-family: "Roboto", sans-serif;
+  font-weight: 800;
+  background-color: $darkblue;
+  transition: 0.25s all;
+
+  &:hover {
+    background-color: $red;
+  }
+}

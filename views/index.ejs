@@ -1,13 +1,65 @@
+<!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8">
+    <title>gareth bk | </title>
 
-<head>
-    <title>Gareth's Portfolio</title>
-</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono|Roboto" rel="stylesheet">
 
-<body>
-    <div>
-        I am Gareth
-    </div>
-</body>
+    <link rel="icon" type="image/png" href="img/favicon.png">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+
+  </head>
+  <body>
+
+    
+        <nav class="navbar is-fixed-top unscrolled" role="navigation" aria-label="main navigation">
+
+        <div class="container">
+
+            <div class="navbar-brand">
+                <a class="navbar-item" href="<%= navigation.home.url %>">gbk</a>
+            </div>
+
+            <div class="navbar-menu">
+                <div class="navbar-start">
+                    <span class="navbar-item">/</span>
+                </div>
+                <div class="navbar-end">
+                    <a class="navbar-item" href="<%= navigation.work.url %>"><%= navigation.work.title %></a>
+                    <span class="navbar-item">/</span>
+                    <a class="navbar-item" href="<%= navigation.about.url %>"><%= navigation.about.title %></a>
+                    <span class="navbar-item">/</span>
+                    <a class="navbar-item" href="<%= navigation.contact.url %>"><%= navigation.contact.title %></a>
+                </div>
+            </div>
+
+            </div>
+
+        </nav>
+
+        <section id="hero" class="hero is-large">
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <h1 class="is-size-1">Hi, I'm Gareth</h1>
+
+                    <p class="mt-5 is-size-3">Checkout my <a href="/work">work</a>, or learn more <a href="/about">about</a> me.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+        <div class="container">
+            <div class="content">
+            <p>© 2018 gareth bk</p>
+            </div>
+        </div>
+        </footer>
+        
+
+  </body>
 </html>

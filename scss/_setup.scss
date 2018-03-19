@@ -1,0 +1,48 @@
+$black: #1e1b18;
+$white: #fffaff;
+$red: #d8315b;
+$lightblue: #3e92cc;
+$darkblue: #0a2463;
+
+html,
+body {
+  overflow: auto;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: $lightblue;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "IBM Plex Mono", monospace;
+}
+
+@for $i from 1 through 5 {
+  .mt-#{$i} {
+    margin-top: $i * 1em;
+  }
+}
+
+@for $i from 1 through 5 {
+  .mb-#{$i} {
+    margin-bottom: $i * 1em;
+  }
+}
+
+@for $i from 1 through 5 {
+  .p-#{$i} {
+    padding: $i * 1em;
+  }
+}
+
+@for $i from 1 through 5 {
+  .pt-#{$i} {
+    padding-top: $i * 1em;
+  }
+}
