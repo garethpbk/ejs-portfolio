@@ -90,6 +90,6 @@ app.post("/thanks", (req, res) => {
   res.render("thanks", data);
 });
 
-app.listen(8080, () => {
+app.listen(process.env.PORT || 8080, () => {
   console.log("Listening at http://localhost:8080...");
 });
