@@ -2,6 +2,8 @@ const express = require("express");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const sgMail = require("@sendgrid/mail");
+const dotenv = require("dotenv");
+dotenv.load();
 
 const app = express();
 
@@ -19,7 +21,10 @@ app.use("/img", express.static(__dirname + "/img"));
 
 app.use("/js", express.static(__dirname + "/js"));
 
-sgMail.setApiKey("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");
+const sendGridApiKey = process.env.SENDGRID_API_KEY;
+
+sgMail.setApiKey(sendGridApiKey);
+console.log(sendGridApiKey);
 
 const topNavigation = {
   home: {
@@ -84,7 +89,7 @@ app.post("/thanks", (req, res) => {
     subject: "New inquiry from " + req.body.firstName + " " + req.body.lastName,
     text: req.body.message
   };
-
+  console.log(sendGridApiKey);
   sgMail.send(msg);
 
   res.render("thanks", data);
