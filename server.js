@@ -1,8 +1,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
-const path = require("path");
-//const profile = require("./profile");
+const sgMail = require("@sendgrid/mail");
 
 const app = express();
 
@@ -14,16 +13,13 @@ app.set("views", "./views");
 
 app.set("view engine", "ejs");
 
-app.use(express.static(__dirname + "/css"));
 app.use("/css", express.static(__dirname + "/css"));
 
-app.use(express.static(__dirname + "/img"));
 app.use("/img", express.static(__dirname + "/img"));
 
-app.use(express.static(__dirname + "/js"));
 app.use("/js", express.static(__dirname + "/js"));
 
-//app.use("/profile", profile);
+sgMail.setApiKey("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");
 
 const topNavigation = {
   home: {
@@ -81,6 +77,15 @@ app.post("/thanks", (req, res) => {
     navigation: topNavigation,
     contact: req.body
   };
+
+  const msg = {
+    to: "garethbk@gmail.com",
+    from: req.body.email,
+    subject: "New inquiry from " + req.body.firstName + " " + req.body.lastName,
+    text: req.body.message
+  };
+
+  sgMail.send(msg);
 
   res.render("thanks", data);
 });
