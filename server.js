@@ -24,7 +24,6 @@ app.use("/js", express.static(__dirname + "/js"));
 const sendGridApiKey = process.env.SENDGRID_API_KEY;
 
 sgMail.setApiKey(sendGridApiKey);
-console.log(sendGridApiKey);
 
 const topNavigation = {
   home: {
@@ -89,7 +88,6 @@ app.post("/thanks", (req, res) => {
     subject: "New inquiry from " + req.body.firstName + " " + req.body.lastName,
     text: req.body.message
   };
-  console.log(sendGridApiKey);
   sgMail.send(msg);
 
   res.render("thanks", data);
